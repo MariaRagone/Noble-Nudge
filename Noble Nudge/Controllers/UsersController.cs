@@ -11,6 +11,8 @@ namespace Noble_Nudge.Controllers
     {
         //Our code
         NobleNudgeDbContext _dbContext = new NobleNudgeDbContext(); // access the database
+
+        // /api/Users/23423
         [HttpGet("{id}")] // endpoint
         public User GetById(int id)
         {
@@ -22,6 +24,7 @@ namespace Noble_Nudge.Controllers
         //    return _dbContext.Users.FirstOrDefault(u => u.Id == id);
         //}
 
+        // /api/Users/
         [HttpPost("users")]
         public User AddUser([FromBody] User u)
         {

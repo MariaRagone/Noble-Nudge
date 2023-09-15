@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from 'oidc-client';
 import { Users } from 'src/app/Models/user';
 import { UsersService } from 'src/app/Services/user.service';
 
@@ -9,7 +10,7 @@ import { UsersService } from 'src/app/Services/user.service';
 })
 export class UserComponent {
   constructor(private _userService: UsersService){}
-  newUser: Users = {} as Users; //variable that connects your inputs
+  public newUser: User = {} as User; //variable that connects your inputs
   public userList: Users [] = [];
 
   id: number = 1;
@@ -18,17 +19,17 @@ export class UserComponent {
   }
 
   getUser() {
-    this._userService.GetUserById(this.id).subscribe((reponse: Users) => {
-      console.log(reponse);
-      this.newUser = reponse;
+    this._userService.GetUserById(this.id).subscribe((response: User) => { // Adjust the type to User
+      console.log(response);
+      this.newUser = response;
     });
   }
 
-  addUser() {
-    //this.allUsersResult = []; //you can remove this line, but it empties the array of the users. the website looks like its loading again
-    this._userService.AddUser(this.newUser).subscribe((response: Users) => {
-      console.log(response);
-      this.getUser(); //recall the method so that the user list refreshes
-    });
+    addUser() {
+      //this.allUsersResult = []; //you can remove this line, but it empties the array of the users. the website looks like its loading again
+      this._userService.AddUser(this.newUser).subscribe((response: User) => {
+        console.log(response);
+        this.getUser(); //recall the method so that the user list refreshes
+      });
+    }
   }
-}
