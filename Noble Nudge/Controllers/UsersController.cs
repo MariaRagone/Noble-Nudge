@@ -7,7 +7,7 @@ namespace Noble_Nudge.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         //Our code
         NobleNudgeDbContext _dbContext = new NobleNudgeDbContext(); // access the database

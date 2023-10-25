@@ -13,7 +13,7 @@ export class UserComponent {
   public newUser: User = {} as User; //variable that connects your inputs
   public userList: Users [] = [];
 
-  id: number = 1;
+  id: number = 2;
   ngOnInit() {
     this.getUser();
   }
