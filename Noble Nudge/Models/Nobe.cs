@@ -13,5 +13,7 @@ public partial class Nobe
 
     public int? Points { get; set; }
 
+    public byte[]? Icon { get; set; }
+
     public virtual ICollection<User> Users { get; set; } = new List<User>();
 }

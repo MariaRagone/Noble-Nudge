@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using FinalProject.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Noble_Nudge.Models;
@@ -18,11 +17,13 @@ public partial class NobleNudgeDbContext : DbContext
 
     public virtual DbSet<Nobe> Nobes { get; set; }
 
+    public virtual DbSet<NobeCategory> NobeCategories { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer(Secret.optionsBuilder);
+        => optionsBuilder.UseSqlServer("Data Source= noblenudge.database.windows.net;Initial Catalog= NobleNudgeDB; User Id=mangotsunami; Password=da)lkfea7G");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -38,6 +39,21 @@ public partial class NobleNudgeDbContext : DbContext
                 .HasColumnName("category");
             entity.Property(e => e.NobeName).HasMaxLength(50);
             entity.Property(e => e.Points).HasColumnName("points");
+        });
+
+        modelBuilder.Entity<NobeCategory>(entity =>
+        {
+            entity.HasKey(e => e.CategoryId).HasName("PK__NobeCate__19093A2B5F9A3F71");
+
+            entity.Property(e => e.CategoryId)
+                .ValueGeneratedNever()
+                .HasColumnName("CategoryID");
+            entity.Property(e => e.CategoryName)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.IconImage)
+                .HasMaxLength(255)
+                .IsUnicode(false);
         });
 
         modelBuilder.Entity<User>(entity =>
