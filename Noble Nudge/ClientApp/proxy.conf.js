@@ -6,7 +6,10 @@ const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_H
 const PROXY_CONFIG = [
   {
     context: [
+            //add in url for controllers
       "/api/Users",
+      "/api/Nobes",
+      "/api/Categories"
    ],
     target: target,
     secure: false,

@@ -18,6 +18,4 @@ public partial class User
     public string? ZipCode { get; set; }
 
     public int? Points { get; set; }
-
-    public virtual ICollection<Nobe> Nobes { get; set; } = new List<Nobe>();
 }

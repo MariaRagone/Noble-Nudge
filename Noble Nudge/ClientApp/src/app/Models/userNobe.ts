@@ -3,7 +3,7 @@
 //     nobeName?: string | null;
 //     category?: string | null;
 //     points?: number | null;
-//     users: Users[];
+//     icon: string;
 //   }
   
 //   export interface Users {
@@ -16,3 +16,8 @@
 //     points?: number | null;
 //     nobes: Nobe[];
 //   }
+
+export interface UserNobe {
+    googleID: string;
+    nobeID: string;
+}

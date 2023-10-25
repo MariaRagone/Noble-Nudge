@@ -9,7 +9,7 @@ namespace Noble_Nudge.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        //Our code
+        //My code
         NobleNudgeDbContext _dbContext = new NobleNudgeDbContext(); // access the database
 
         // /api/Users/23423
@@ -25,6 +25,7 @@ namespace Noble_Nudge.Controllers
         //}
 
         // /api/Users/
+
         [HttpPost("users")]
         public User AddUser([FromBody] User u)
         {

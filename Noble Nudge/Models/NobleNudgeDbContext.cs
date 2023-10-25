@@ -21,6 +21,8 @@ public partial class NobleNudgeDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
+    public virtual DbSet<UserNobe> UserNobes { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Data Source= noblenudge.database.windows.net;Initial Catalog= NobleNudgeDB; User Id=mangotsunami; Password=da)lkfea7G");
@@ -75,25 +77,20 @@ public partial class NobleNudgeDbContext : DbContext
             entity.Property(e => e.ZipCode)
                 .HasMaxLength(10)
                 .HasColumnName("zipCode");
+        });
 
-            entity.HasMany(d => d.Nobes).WithMany(p => p.Users)
-                .UsingEntity<Dictionary<string, object>>(
-                    "UserNobe",
-                    r => r.HasOne<Nobe>().WithMany()
-                        .HasForeignKey("NobeId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__UserNobe__NobeID__628FA481"),
-                    l => l.HasOne<User>().WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("FK__UserNobe__UserID__619B8048"),
-                    j =>
-                    {
-                        j.HasKey("UserId", "NobeId").HasName("PK__UserNobe__DFFA0D7D5F8E5CE7");
-                        j.ToTable("UserNobe");
-                        j.IndexerProperty<int>("UserId").HasColumnName("UserID");
-                        j.IndexerProperty<int>("NobeId").HasColumnName("NobeID");
-                    });
+        modelBuilder.Entity<UserNobe>(entity =>
+        {
+            entity.HasKey(e => e.GoogleId).HasName("PK__userNobe__0DA2E4E3EAD9DCC8");
+
+            entity.ToTable("userNobes");
+
+            entity.Property(e => e.GoogleId)
+                .HasMaxLength(255)
+                .HasColumnName("googleID");
+            entity.Property(e => e.NobeId)
+                .HasMaxLength(255)
+                .HasColumnName("nobeID");
         });
 
         OnModelCreatingPartial(modelBuilder);
