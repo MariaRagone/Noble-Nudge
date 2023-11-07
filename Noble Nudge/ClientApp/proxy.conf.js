@@ -9,7 +9,8 @@ const PROXY_CONFIG = [
             //add in url for controllers
       "/Users",
       "/Nobes",
-      "/Categories"
+      "/Categories",
+      "/Favorites"
    ],
     target: target,
     secure: false,

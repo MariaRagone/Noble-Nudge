@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 
 namespace Noble_Nudge.Models;
@@ -16,6 +15,8 @@ public partial class NobleNudgeDbContext : DbContext
     {
     }
 
+    public virtual DbSet<Favorite> Favorites { get; set; }
+
     public virtual DbSet<Nobe> Nobes { get; set; }
 
     public virtual DbSet<NobeCategory> NobeCategories { get; set; }
@@ -30,6 +31,22 @@ public partial class NobleNudgeDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Favorite>(entity =>
+        {
+            entity.HasKey(e => e.FavoriteId).HasName("PK__favorite__876A64D5A844C358");
+
+            entity.ToTable("favorites");
+
+            entity.Property(e => e.FavoriteId)
+                .ValueGeneratedNever()
+                .HasColumnName("favoriteId");
+            entity.Property(e => e.NobeId).HasColumnName("nobeId");
+            entity.Property(e => e.UserGoogleId)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("userGoogleID");
+        });
+
         modelBuilder.Entity<Nobe>(entity =>
         {
             entity.HasKey(e => e.NobeId).HasName("PK__Nobe__872C1D1D588BCF00");

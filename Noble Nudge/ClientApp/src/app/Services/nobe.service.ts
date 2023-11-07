@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, InjectionToken, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Favorite } from '../Models/favorite';
 import { Nobe } from '../Models/nobe';
 
 
@@ -21,22 +22,22 @@ export class NobeService {
     return this.http.delete<Nobe>(`${this.baseUrl}Nobes/${id}`);
   }
 
-  // getAllFavorites(): Observable<Favorite[]>{
-  //   return this.http.get<Favorite[]>(`${this.baseUrl}api/Events/Favorite`);
-  // }
+  getAllFavorites(): Observable<Favorite[]>{
+    return this.http.get<Favorite[]>(`${this.baseUrl}Nobes/Favorite`);
+  }
 
-  // getNobeById(id: number){
-  //   return this.http.get<Event>(`${this.baseUrl}api/Events/${id}`);
-  // }
+  getNobeById(id: number){
+    return this.http.get<Nobe>(`${this.baseUrl}Nobes/${id}`);
+  }
 
-  // getEventsByCategory(Category:Event): Observable<Event> {
-  //   return this.http.get<Event>(`${this.baseUrl}api/Events/Category?=${Category}`);
-  // }
+  getNobeByCategory(Category:Nobe): Observable<Nobe> {
+    return this.http.get<Nobe>(`${this.baseUrl}Nobes/Category?=${Category}`);
+  }
 
+  addNobeToFave(addFave:Favorite): Observable<Favorite>{
+    return this.http.post<Favorite>(`${this.baseUrl}Nobes/Favorite`, addFave); 
+  }
 
-  // addEventToFave(addFave:Favorite): Observable<Favorite>{
-  //   return this.http.post<Favorite>(`${this.baseUrl}api/Events/Favorite`, addFave); 
-  // }
   // getFavesByUser(userName:string): Observable<Event []>{
   //   return this.http.get<Event[]>(`${this.baseUrl}api/Events/FavoritesByUser?userName=${userName}`);
   // }

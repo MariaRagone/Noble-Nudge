@@ -28,11 +28,21 @@ namespace Noble_Nudge.Controllers
        
         [HttpPost]
                 //[HttpPost("nobes")]
-        public Nobe AddNobe([FromBody] Nobe n)
+        public Nobe AddNobe([FromBody] Nobe newNobe)
         {
-            _dbContext.Nobes.Add(n);
+            _dbContext.Nobes.Add(newNobe);
             _dbContext.SaveChanges();
-            return n;
+            return newNobe;
         }
+
+        //api/Nobes/Favorite
+        [HttpPost("Favorite")]
+        public Favorite addFavorite([FromBody] Favorite newFavorite)
+        {
+            _dbContext.Favorites.Add(newFavorite);
+            _dbContext.SaveChanges();
+            return newFavorite;
+        }
+
     }
 }

@@ -28,7 +28,7 @@ export class NobeFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitEvent() {
+  submitNobe() {
     this.nobeCreated.emit(this.newNobe);
     this.newNobe = {} as Nobe;//resets all form fields after submit
   }

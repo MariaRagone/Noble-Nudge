@@ -1,4 +1,5 @@
-<div class="form" *ngIf="(loggedIn == true)">
+<div class="form" *ngIf="(loggedIn == false)">
+    <!-- change loggedin to true once you have this figured out -->
 		
     <h2>New Nobe</h2>
     <p>Nobe Name</p>
@@ -30,5 +31,5 @@
         <option value="10">10</option>
     </select>
 
-    <button [routerLink]="['']" (click)="newNobeInfo(newNobe)">Submit</button>
+    <button [routerLink]="['']" (click)="submitNobe()">Submit</button>
 </div>
