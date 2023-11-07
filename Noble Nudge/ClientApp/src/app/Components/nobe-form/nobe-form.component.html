@@ -1,4 +1,6 @@
-<div class="form" *ngIf="(loggedIn == false)">
+<button class="createNewNobe" (click)="toggleDisplay()">Add a Nobe</button>
+<div  *ngIf="displayForm">
+<div class="form" *ngIf="(loggedIn == false) && (displayForm == true)">
     <!-- change loggedin to true once you have this figured out -->
 		
     <h2>New Nobe</h2>
@@ -6,17 +8,12 @@
     <input type="text" placeholder="Name" [(ngModel)]="newNobe.nobeName" />
     <p>Category</p>
     <select [(ngModel)]="newNobe.category">
-        <option value="Community Service">Community Service</option>
-        <option value="Charity">Charity</option>
-        <option value="Creativity">Creativity</option>
-        <option value="Environmental">Environmental</option>
-        <option value="Family and Friends">Family and Friends</option>
-        <option value="Gratitude">Gratitude</option>
-        <option value="Health">Health</option>
-        <option value="Helping Animals">Helping Animals</option>
-        <option value="Mentoring">Mentoring</option>
-        <option value="Positivity">Positivity</option>
-    </select>
+        <option value="">Select a category</option>
+        <option *ngFor="let category of categories" [value]="category.categoryId">
+          {{ category.categoryName }}
+        </option>
+      </select>
+      
     <p>Number of Points</p>
     <select [(ngModel)]="newNobe.points">
         <option value="1">1</option>
@@ -31,5 +28,7 @@
         <option value="10">10</option>
     </select>
 
-    <button [routerLink]="['']" (click)="submitNobe()">Submit</button>
+    <button (click)="submitNobe(newNobe)">Submit</button>
 </div>
+<h3>
+

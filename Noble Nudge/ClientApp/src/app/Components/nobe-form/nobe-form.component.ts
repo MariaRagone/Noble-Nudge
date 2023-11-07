@@ -1,5 +1,8 @@
 import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Categories } from 'src/app/Models/categories';
+import { CategoryService } from 'src/app/Services/category.service';
+import { getEnabledCategories } from 'trace_events';
 import { Nobe } from '../../Models/nobe';
 import { NobeService } from '../../Services/nobe.service';
 
@@ -17,21 +20,31 @@ export class NobeFormComponent implements OnInit {
   displayForm: boolean = false;
   loggedIn: boolean = false;
   doesIdExist: boolean = false;
+  selectedCategory: Categories = {} as Categories;
+  categories: Categories [] = [];
 
-  @Output () nobeCreated = new EventEmitter<Nobe>();
+  @Output() nobeCreated = new EventEmitter<Nobe | Categories>();
 
   constructor(
-    private _nobeInfoService: NobeService
+    private _nobeInfoService: NobeService, private _categoryService: CategoryService
 
   ) { }
 
   ngOnInit(): void {
+    this._categoryService.getCategories().subscribe((data) => {
+      this.categories = data;
+    });
   }
 
-  submitNobe() {
+  submitNobe(newNobe: Nobe) {
     this.nobeCreated.emit(this.newNobe);
     this.newNobe = {} as Nobe;//resets all form fields after submit
   }
+  displayCategory(category: Categories) {
+    this.selectedCategory = category;
+    this.nobeCreated.emit(category);
+  }
+  
   newNobeInfo(newNobe: Nobe): void {
     newNobe.nobeName = this.newNobe.nobeName;
     
@@ -42,9 +55,72 @@ export class NobeFormComponent implements OnInit {
     this.nobeList = [];
      
   }
-
   toggleDisplay(): void {
     this.displayForm = !this.displayForm;
   }
 }
+
+
+
+
+//THIS IS FROM THE SCHEDULER APP-----------------------------
+  // addNewNobe(newNobe: Nobe): void {
+  //   this.updateDateTime();
+  //       console.log(newEvent)
+  //   let newNewDate: Date = new Date(newEvent.dateTime);
+  //   let timestamp = newNewDate.getTime() + 30 * 60000;
+  //   newEvent.endDateTime = new Date(timestamp);
+  // console.log(newNewDate)
+  // console.log(timestamp)
+  // console.log(newEvent.endDateTime)
+  // console.log(this.eventList)
+  //   this.alreadyExists = false;
+  //   if(this.futureEventOnly(newNewDate) == true){
+
+  //   for (let existingEvent of this.eventList) {
+  //     if (!this.isEventOverlapping(existingEvent, newEvent)) {
+  //     console.log("entering if")     
+  //   }
+  //     else{
+  //       this.alreadyExists = true;
+  //       console.log("entering else")
+  //     }
+  //   }
+
+  //     if ((this.user) && (this.alreadyExists === false)) {
+  //       console.log('second if is working')
+  //       this.userinfoservice.getById(this.user.id).subscribe((response: UserInfo) => {
+  //       if (this.doesIdExist) {
+  //         this.newUser = response;
+  //         newEvent.googleId = this.newUser.googleId;
+  //         newEvent.address = this.newUser.address;
+  //         newEvent.city = this.newUser.city;
+  //         newEvent.state = this.newUser.state;
+  //         newEvent.firstName = this.user.firstName;
+  //         newEvent.lastName = this.user.lastName;
+  //       }
+  //       this._formService.addEvent(newEvent).subscribe((response: Userform) => {
+  //         this.eventList.push(response);
+  //       });
+  //     });
+  //   }
+  //    else if(this.alreadyExists === false) {
+  //     this._formService.addEvent(newEvent).subscribe((response: Userform) => {
+  //       this.eventList.push(response);
+  //     });
+  //   }
+  //   else if(this.alreadyExists === true){
+  //     console.log('bool is working')
+  //   }
+  // }
+
+
+  //   this.e = {} as Userform;
+  //   this.newUser = {} as UserInfo;
+  //   this.GetEvents();
+  // }
+
+
+
+
 

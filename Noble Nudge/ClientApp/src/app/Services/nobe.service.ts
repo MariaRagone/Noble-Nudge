@@ -12,10 +12,10 @@ export class NobeService {
   constructor(private http:HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
 
   getAllNobes(): Observable<Nobe[]>{
-    return this.http.get<Nobe[]>(`${this.baseUrl}/Nobes`);
+    return this.http.get<Nobe[]>(`${this.baseUrl}Nobes`);
   }
   addNewNobe(newNobe: Nobe): Observable<Nobe>{
-    return this.http.post<Nobe>(`${this.baseUrl}/Nobes`, newNobe); 
+    return this.http.post<Nobe>(`${this.baseUrl}Nobes`, newNobe); 
   }
 
   deleteNobe(id: number): Observable<Nobe>{

@@ -6,6 +6,7 @@ export interface Nobe {
     nobeName?: string | null;
     category?: string | null;
     points?: number | null;
+    icon: string;
     users: Users[];
   }
   
