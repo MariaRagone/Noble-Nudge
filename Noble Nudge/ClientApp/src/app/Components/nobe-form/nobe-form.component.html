@@ -1,0 +1,34 @@
+<div class="form" *ngIf="(loggedIn == true)">
+		
+    <h2>New Nobe</h2>
+    <p>Nobe Name</p>
+    <input type="text" placeholder="Name" [(ngModel)]="newNobe.nobeName" />
+    <p>Category</p>
+    <select [(ngModel)]="newNobe.category">
+        <option value="Community Service">Community Service</option>
+        <option value="Charity">Charity</option>
+        <option value="Creativity">Creativity</option>
+        <option value="Environmental">Environmental</option>
+        <option value="Family and Friends">Family and Friends</option>
+        <option value="Gratitude">Gratitude</option>
+        <option value="Health">Health</option>
+        <option value="Helping Animals">Helping Animals</option>
+        <option value="Mentoring">Mentoring</option>
+        <option value="Positivity">Positivity</option>
+    </select>
+    <p>Number of Points</p>
+    <select [(ngModel)]="newNobe.points">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <button [routerLink]="['']" (click)="newNobeInfo(newNobe)">Submit</button>
+</div>

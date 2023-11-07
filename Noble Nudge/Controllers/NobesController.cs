@@ -4,9 +4,10 @@ using Noble_Nudge.Models;
 
 namespace Noble_Nudge.Controllers
 {
+    [Route("[controller]")]
 
-    [Route("api/[controller]")]
-    [ApiController]
+    //[Route("api/[controller]")]
+    //[ApiController]
     public class NobesController : ControllerBase
     {
         //Our code
@@ -24,7 +25,9 @@ namespace Noble_Nudge.Controllers
         //    return _dbContext.Users.FirstOrDefault(u => u.Id == id);
         //}
 
-        [HttpPost("nobes")]
+       
+        [HttpPost]
+                //[HttpPost("nobes")]
         public Nobe AddNobe([FromBody] Nobe n)
         {
             _dbContext.Nobes.Add(n);

@@ -7,9 +7,9 @@ const PROXY_CONFIG = [
   {
     context: [
             //add in url for controllers
-      "/api/Users",
-      "/api/Nobes",
-      "/api/Categories"
+      "/Users",
+      "/Nobes",
+      "/Categories"
    ],
     target: target,
     secure: false,
