@@ -11,7 +11,7 @@ export class CategoryService {
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string){}
 
   getCategories(): Observable<Categories[]> {
-    return this.http.get<Categories[]>(`${this.baseUrl}/categories`);
+    return this.http.get<Categories[]>(`${this.baseUrl}/Categories`);
 
   }
 

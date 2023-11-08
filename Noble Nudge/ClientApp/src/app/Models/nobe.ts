@@ -3,9 +3,9 @@ import { Users } from "./user";
 
 export interface Nobe {
     nobeId: number;
-    nobeName?: string | null;
-    category?: string | null;
-    points?: number | null;
+    nobeName?: string ;
+    category?: string ;
+    points?: number ;
     icon: string;
     users: Users[];
   }

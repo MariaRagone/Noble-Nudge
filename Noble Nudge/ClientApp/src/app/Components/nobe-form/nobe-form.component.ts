@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Categories } from 'src/app/Models/categories';
 import { CategoryService } from 'src/app/Services/category.service';
-import { getEnabledCategories } from 'trace_events';
+// import { getEnabledCategories } from 'trace_events';
 import { Nobe } from '../../Models/nobe';
 import { NobeService } from '../../Services/nobe.service';
 
@@ -35,11 +35,20 @@ export class NobeFormComponent implements OnInit {
       this.categories = data;
     });
   }
-
-  submitNobe(newNobe: Nobe) {
-    this.nobeCreated.emit(this.newNobe);
-    this.newNobe = {} as Nobe;//resets all form fields after submit
+  //sends from the ts to the backend/service
+  submitNobe(newNobe:Nobe): void {
+    this._nobeInfoService.addNewNobe(newNobe).subscribe((response: Nobe) => {
+      this.nobeList.push(response);
+      newNobe = response;
+      console.log(newNobe);
+    });
   }
+
+    //emit sends from one ts to another ts
+  // submitNobe(newNobe: Nobe) {
+  //   this.nobeCreated.emit(this.newNobe);
+  //   this.newNobe = {} as Nobe;//resets all form fields after submit
+  // }
   displayCategory(category: Categories) {
     this.selectedCategory = category;
     this.nobeCreated.emit(category);
