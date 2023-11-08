@@ -15,6 +15,5 @@ namespace Noble_Nudge.Controllers
             return _dbContext.NobeCategories.Find(id);
         }
 
-
     }
 }

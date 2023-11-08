@@ -7,13 +7,14 @@
     <p>Nobe Name</p>
     <input type="text" placeholder="Name" [(ngModel)]="newNobe.nobeName" />
     <p>Category</p>
+    
     <select [(ngModel)]="newNobe.category">
-        <option value="">Select a category</option>
-        <option *ngFor="let category of categories" [value]="category.categoryId">
+      <option value="">Select a category</option>
+      <option *ngFor="let category of displayCategories" [value]="category.categoryName">
           {{ category.categoryName }}
-        </option>
-      </select>
-      
+      </option>
+  </select>
+
     <p>Number of Points</p>
     <select [(ngModel)]="newNobe.points">
         <option value="1">1</option>
@@ -32,3 +33,15 @@
 </div>
 <h3>
 
+  <!-- test to see if categories will show up -->
+    <div *ngFor="let c of callGetCategories()">
+      {{displayCategories}}
+      <p>hello</p>
+      <div routerLink="/Category/{{ c.categoryId }}">
+        <div class="name">{{ c.categoryId }}
+
+        </div>
+      </div>  
+    </div>
+    <!-- ------------------------------------------- -->
+    
