@@ -34,7 +34,7 @@
 <h3>
 
   <!-- test to see if categories will show up -->
-    <div *ngFor="let c of callGetCategories()">
+    <div *ngFor="let c of displayCategories">
       {{displayCategories}}
       <p>hello</p>
       <div routerLink="/Category/{{ c.categoryId }}">

@@ -21,16 +21,18 @@ export class NobeFormComponent implements OnInit {
   loggedIn: boolean = false;
   doesIdExist: boolean = false;
   selectedCategory: Categories = {} as Categories;
-  displayCategories: Categories [] = [];
+  displayCategories: Categories[] = [];
+
 
   @Output() nobeCreated = new EventEmitter<Nobe | Categories>();
 
   constructor(
     private _nobeInfoService: NobeService, 
     private _categoryService: CategoryService) { }
+    
 
   ngOnInit(): void {
-    this.callGetCategories();
+    this.fetchCategories();
     
   }
   //sends from the ts to the backend/service
@@ -39,6 +41,7 @@ export class NobeFormComponent implements OnInit {
       this.nobeList.push(response);
       newNobe = response;
       console.log(newNobe);
+      this.newNobe = {} as Nobe; //resets all form fields after submit
     });
   }
 
@@ -47,13 +50,13 @@ export class NobeFormComponent implements OnInit {
   //   this.nobeCreated.emit(this.newNobe);
   //   this.newNobe = {} as Nobe;//resets all form fields after submit
   // }
-callGetCategories(){
-  this._categoryService.getCategories().subscribe((response:Categories[]) => {
-    this.displayCategories = response;
-    console.log(response);
-  });
-}
-
+  fetchCategories() {
+    this._categoryService.getCategories().subscribe((response: Categories[]) => {
+      this.displayCategories = response;
+      console.log(response);
+    });
+  }
+  
   // displayCategory(category: Categories) {
   //   this.selectedCategory = category;
   //   this.nobeCreated.emit(category);

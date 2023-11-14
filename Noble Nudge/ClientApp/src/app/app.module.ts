@@ -12,6 +12,8 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { UserComponent } from './Components/user/user.component';
 import { ShareComponent } from './Components/share/share.component';
 import { NobeFormComponent } from './Components/nobe-form/nobe-form.component';
+import { NobeListComponent } from './Components/nobe-list/nobe-list.component';
+import { CategoriesComponent } from './Components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NobeFormComponent } from './Components/nobe-form/nobe-form.component';
     FetchDataComponent,
     UserComponent,
     ShareComponent,
-    NobeFormComponent
+    NobeFormComponent,
+    NobeListComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
