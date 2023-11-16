@@ -14,6 +14,14 @@ export class NobeService {
   getAllNobes(): Observable<Nobe[]>{
     return this.http.get<Nobe[]>(`${this.baseUrl}Nobes`);
   }
+  getNobeById(id: number){
+    return this.http.get<Nobe>(`${this.baseUrl}Nobes/${id}`);
+  }
+
+  getNobeByCategory(Category:Nobe): Observable<Nobe> {
+    return this.http.get<Nobe>(`${this.baseUrl}Nobes/Category?=${Category}`);
+  }
+
   addNewNobe(newNobe: Nobe): Observable<Nobe>{
     return this.http.post<Nobe>(`${this.baseUrl}Nobes`, newNobe); 
   }
@@ -26,16 +34,17 @@ export class NobeService {
     return this.http.get<Favorite[]>(`${this.baseUrl}Nobes/Favorite`);
   }
 
-  getNobeById(id: number){
-    return this.http.get<Nobe>(`${this.baseUrl}Nobes/${id}`);
-  }
-
-  getNobeByCategory(Category:Nobe): Observable<Nobe> {
-    return this.http.get<Nobe>(`${this.baseUrl}Nobes/Category?=${Category}`);
-  }
 
   addNobeToFave(addFave:Favorite): Observable<Favorite>{
     return this.http.post<Favorite>(`${this.baseUrl}Nobes/Favorite`, addFave); 
+  }
+  
+  addUserToFave(addUser:Favorite): Observable<Favorite>{
+    return this.http.post<Favorite>(`${this.baseUrl}Nobes/Favorite`, addUser); 
+  }
+
+  removeNobeFromFave(removedFavorite:Favorite): Observable<Favorite>{
+    return this.http.delete<Favorite>(`${this.baseUrl}Nobe/Favorite?UserName=${removedFavorite.userGoogleId}&NobeId=${removedFavorite.nobeId}`);
   }
 
   // getFavesByUser(userName:string): Observable<Event []>{
@@ -61,9 +70,6 @@ export class NobeService {
 //     return this.http.delete<Event>(`${this.baseUrl}api/Events/${id}`);
 //   }
 
-//   removeEventFromFave(removedFavorite:Favorite): Observable<Favorite>{
-//     return this.http.delete<Favorite>(`${this.baseUrl}api/Events/Favorite?UserName=${removedFavorite.userName}&EventId=${removedFavorite.eventId}`);
-//   }
 // }
 
 }

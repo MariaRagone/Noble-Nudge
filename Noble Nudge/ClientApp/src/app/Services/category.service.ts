@@ -8,24 +8,27 @@ import { Categories } from '../Models/categories';
 })
 export class CategoryService {
 
-  private baseUrl = 'your-api-endpoint';
-
-  constructor(private http: HttpClient) {}
-
-  getCategories(): Observable<Categories[]> {
-    return this.http.get<Categories[]>(`${this.baseUrl}/categories`);
+  constructor(private http:HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
+ 
+ 
+  // ------------------------------------------------------------------------------------
+  getEventById(id: number){
+    return this.http.get<Event>(`${this.baseUrl}api/Events/${id}`);
   }
+  getAllEvents(): Observable<Event[]>{
+    return this.http.get<Event[]>(`${this.baseUrl}api/Events`);
+  }
+// --------------------------------------------------------------------------------
+ 
+
+
+  getCategoriesByID(id:number): Observable<Categories[]> {
+    return this.http.get<Categories[]>(`${this.baseUrl}Categories/${id}`);
+  }
+
+  getAllCategories(): Observable<Categories[]>{
+    return this.http.get<Categories[]>(`${this.baseUrl}Categories`);
+  }
+
 }
 
-//   callGetCategories(categories: Categories[]) {
-//     throw new Error('Method not implemented.');
-//   }
-  
-//   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string){}
-
-//   getCategories(): Observable<Categories[]> {
-//     return this.http.get<Categories[]>(`${this.baseUrl}/Categories`);
-
-//   }
-
-// }

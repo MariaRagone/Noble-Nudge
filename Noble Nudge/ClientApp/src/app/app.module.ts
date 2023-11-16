@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +13,7 @@ import { ShareComponent } from './Components/share/share.component';
 import { NobeFormComponent } from './Components/nobe-form/nobe-form.component';
 import { NobeListComponent } from './Components/nobe-list/nobe-list.component';
 import { CategoriesComponent } from './Components/categories/categories.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { CategoriesComponent } from './Components/categories/categories.componen
     NobeFormComponent,
     NobeListComponent,
     CategoriesComponent
-  ],
+    ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,

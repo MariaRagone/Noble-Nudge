@@ -10,10 +10,27 @@
     
     <select [(ngModel)]="newNobe.category">
       <option value="">Select a category</option>
+
       <option *ngFor="let category of displayCategories" [value]="category.categoryName">
           {{ category.categoryName }}
       </option>
   </select>
+  
+  <!-- <p>Category</p>
+  <select [(ngModel)]="newNobe.category">
+    <option value="">Select a category</option>
+      <option value="Charity">Charity</option>
+      <option value="Community Service">Community Service</option>
+      <option value="Creativity">Creativity</option>
+      <option value="Enviornmental">Enviornmental</option>
+      <option value="Family and Friends">Family and Friends</option>
+      <option value="Gratitude">Gratitude</option>
+      <option value="Health and Wellness">Health and Wellness</option>
+      <option value="Helping Animals">Helping Animals</option>
+      <option value="Mentoring">Mentoring</option>
+      <option value="Positivity">Positivity</option>
+  </select> -->
+
 
     <p>Number of Points</p>
     <select [(ngModel)]="newNobe.points">
@@ -33,15 +50,4 @@
 </div>
 <h3>
 
-  <!-- test to see if categories will show up -->
-    <div *ngFor="let c of displayCategories">
-      {{displayCategories}}
-      <p>hello</p>
-      <div routerLink="/Category/{{ c.categoryId }}">
-        <div class="name">{{ c.categoryId }}
-
-        </div>
-      </div>  
-    </div>
-    <!-- ------------------------------------------- -->
     

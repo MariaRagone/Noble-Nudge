@@ -16,15 +16,16 @@ namespace Noble_Nudge.Controllers
 
         //api/Nobes/1
         [HttpGet("{id}")] // endpoint
-        public Nobe getById(int id)
+        public Nobe getNobeById(int id)
         {
             return _dbContext.Nobes.Find(id);
         }
+        [HttpGet("Favorites")]
         public List<Favorite> getFavorites(string googleId)
         {
             return _dbContext.Favorites.Where(u => u.UserGoogleId == googleId).ToList();
         }
-        //api/Events/FavoritesByUser
+        //api/Nobes/FavoritesByUser
         [HttpGet("FavoritesByUser")]
         public List<Nobe> getFavoritesByUser(string userName)
 
@@ -39,11 +40,11 @@ namespace Noble_Nudge.Controllers
             return result;
         }
         //api/Nobes/Category?category=
-        [HttpGet("Category")]
-        public List<Nobe> getByCategory(string nobeCategory)
-        {
-            return _dbContext.Nobes.Where(i => i.Category == nobeCategory).ToList();
-        }
+        //[HttpGet("Category")]
+        //public List<Nobe> getByCategory(string nobeCategory)
+        //{
+        //    return _dbContext.Nobes.Where(i => i.Category == nobeCategory).ToList();
+        //}
 
         //api/Nobes
         [HttpGet]

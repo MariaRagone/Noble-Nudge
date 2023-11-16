@@ -15,7 +15,16 @@ import { NobeService } from '../../Services/nobe.service';
 })
 
 export class NobeFormComponent implements OnInit {
-  newNobe: Nobe = {} as Nobe;
+  // newNobe: Nobe = {} as Nobe;
+    newNobe: Nobe = {
+    users: [],
+    nobeName: '',
+    nobeId: 0,
+    icon: '',
+    category: '',
+    points: 1,
+  };
+
   nobeList: Nobe [] = [];
   displayForm: boolean = false;
   loggedIn: boolean = false;
@@ -51,7 +60,7 @@ export class NobeFormComponent implements OnInit {
   //   this.newNobe = {} as Nobe;//resets all form fields after submit
   // }
   fetchCategories() {
-    this._categoryService.getCategories().subscribe((response: Categories[]) => {
+    this._categoryService.getAllCategories().subscribe((response: Categories[]) => {
       this.displayCategories = response;
       console.log(response);
     });

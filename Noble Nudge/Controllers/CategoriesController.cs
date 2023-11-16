@@ -4,7 +4,7 @@ using Noble_Nudge.Models;
 
 namespace Noble_Nudge.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase
     {
@@ -14,6 +14,19 @@ namespace Noble_Nudge.Controllers
         {
             return _dbContext.NobeCategories.Find(id);
         }
+
+        [HttpGet]
+        public List<NobeCategory> getAllCategories()
+        {
+            return _dbContext.NobeCategories.ToList();
+        }
+
+        [HttpGet("{category}")] // endpoint
+        public NobeCategory GetByCategoryName(string category)
+        {
+            return _dbContext.NobeCategories.Find(category);
+        }
+
 
     }
 }
