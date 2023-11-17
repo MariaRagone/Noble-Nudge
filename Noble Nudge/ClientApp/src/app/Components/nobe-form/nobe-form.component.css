@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFD034; /* Set a background color for the body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+  }
+  
+  textarea {
+    width: 100%;
+  }

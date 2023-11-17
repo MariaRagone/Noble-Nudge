@@ -47,6 +47,14 @@ export class NobeService {
     return this.http.delete<Favorite>(`${this.baseUrl}Nobe/Favorite?UserName=${removedFavorite.userGoogleId}&NobeId=${removedFavorite.nobeId}`);
   }
 
+  //this is for the image uploader fix this later
+  uploadFile(file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+
+    return this.http.post('https://localhost:5001/api/file/upload', formData);
+  }
+
   // getFavesByUser(userName:string): Observable<Event []>{
   //   return this.http.get<Event[]>(`${this.baseUrl}api/Events/FavoritesByUser?userName=${userName}`);
   // }

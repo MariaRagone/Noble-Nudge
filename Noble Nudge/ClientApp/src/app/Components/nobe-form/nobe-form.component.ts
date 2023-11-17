@@ -86,10 +86,19 @@ export class NobeFormComponent implements OnInit {
   toggleDisplay(): void {
     this.displayForm = !this.displayForm;
   }
+  //this is for the image uploader, fix this later
+  onFileSelected(event: any): void {
+  const file: File = event.target.files[0];
+
+  this._nobeInfoService.uploadFile(file)
+    .subscribe(response => {
+      console.log('File uploaded successfully', response);
+    }, error => {
+      console.error('Error uploading file', error);
+    });
 }
 
-
-
+}
 
 //THIS IS FROM THE SCHEDULER APP-----------------------------
   // addNewNobe(newNobe: Nobe): void {

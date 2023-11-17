@@ -39,7 +39,9 @@ import { NobeComponent } from './Components/nobe/nobe.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'add-nobe', component: NobeFormComponent },
-
+      { path: 'all-nobes', component: NobeListComponent },
+      { path: 'all-categories', component: CategoriesComponent },
+      { path: 'nobe', component: NobeComponent}
     ])
   ],
   providers: [],

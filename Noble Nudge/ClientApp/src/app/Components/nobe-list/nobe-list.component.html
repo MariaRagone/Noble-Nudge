@@ -1,27 +1,43 @@
-<p>nobe-list works!</p>
 
+
+    <h1>All Nobes</h1>
+    <h6 style="float: right;">Sort by # of Votes</h6>
+    <p></p>
+    <br>
+    
+    <button style="float: right;" *ngIf="!sortingDecending" (click)="sortNobesByVotesDecending()">Ascending</button>
+    <button style="float: right;"  *ngIf="sortingDecending" (click)="sortNobesByVotesAscending()">Decending</button>
+
+
+    <br>
+    <br>
+
+    <div id="container">
+        <!-- Loop through listPosts and generate cards -->
+        <app-nobe> *ngFor="let p of getNobesByNewest()" [individualNobe]="p"></app-nobe>
+    </div>
 
 <div  id="container"*ngFor="let n of allNobesList">
   <!-- <li *ngFor="let p of allPeople; index as i" routerLink="/people/{{i}}">{{p.name}}</li> -->
   <!-- <app-event-detail *ngFor="let e of getEventsByNewest()" [individualEvent]="e"></app-event-detail> -->
-  <div id="container">
+  <div id="card-container">
     <div class="card" >
-    <div class="image-container">
-            <img src="{{ n.icon }}" />
-            <button id="heart" (click)="fetchAddNobeToFave(n)"><i class="fas fa-heart"></i></button>
-            <button id="trash" (click)="fetchDeleteNobe(n.nobeId)"><i class="fas fa-trash"></i></button>
-
-            <!-- if the userID matches any of the events in the table, make the heart pink -->
-            <!-- <button id="like" *ngIf="eventFavorited == true" (click)="callRemoveEventFromFave(e)"><i class="fas fa-heart"></i></button> -->
-            <!-- <i class="fas fa-heart"><button id="heart-checkbox" (click)="callAddEventToFave(e)"> </button></i> -->
-    </div>
-    <div class="card_details" routerLink="/Nobe/{{ n.nobeId }}">
-      <div class="name">{{ n.nobeName }}</div>
-      <div>{{ n.category }}</div>
-      <div>{{ n.points }}  </div>
-      <div>{{n.icon}}</div>
-      <div style="font-weight: 800; color: rgb(255, 0, 115);">{{n.users}}
-        <span class="tag">{{ n.category }}  </span>
+      <div class="card_details" routerLink="/nobe/{{ n.nobeId }}">
+        <div class="name">{{ n.nobeName }}</div>
+        <div>{{ n.category }}</div>
+        <div>Votes: {{ n.points }}  </div>
+        <div>{{n.icon}}</div>
+        <div class="image-container">
+                <img src="{{ n.icon }}" />
+                <button id="heart" (click)="fetchAddNobeToFave(n)"><i class="fas fa-heart"></i></button>
+                <button id="trash" (click)="fetchDeleteNobe(n.nobeId)"><i class="fas fa-trash"></i></button>
+    
+                <!-- if the userID matches any of the events in the table, make the heart pink -->
+                <!-- <button id="like" *ngIf="eventFavorited == true" (click)="callRemoveEventFromFave(e)"><i class="fas fa-heart"></i></button> -->
+                <!-- <i class="fas fa-heart"><button id="heart-checkbox" (click)="callAddEventToFave(e)"> </button></i> -->
+        </div>
+        <div style="font-weight: 800; color: rgb(255, 0, 115);">{{n.users}}
+          <span class="tag">{{ n.category }}  </span>
         <br>
           <!-- <button  *ngIf="!voted" (click)="upVotePost()" >Upvote!</button>
           <button  *ngIf="voted"(click)="removeVote()">Remove vote</button> -->
@@ -29,5 +45,7 @@
     </div>
   </div>
 </div>
-
 </div>
+
+
+

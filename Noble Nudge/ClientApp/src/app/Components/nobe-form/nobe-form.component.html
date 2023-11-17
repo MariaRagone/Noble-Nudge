@@ -1,25 +1,48 @@
-<button class="createNewNobe" (click)="toggleDisplay()">Add a Nobe</button>
-<div  *ngIf="displayForm">
-<div class="form" *ngIf="(loggedIn == false) && (displayForm == true)">
-    <!-- change loggedin to true once you have this figured out -->
-		
-    <h2>New Nobe</h2>
-    <p>Nobe Name</p>
-    <input type="text" placeholder="Name" [(ngModel)]="newNobe.nobeName" />
-    <p>Category</p>
-    
-    <select [(ngModel)]="newNobe.category">
-      <option value="">Select a category</option>
-
-      <option *ngFor="let category of displayCategories" [value]="category.categoryName">
-          {{ category.categoryName }}
-      </option>
-  </select>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add A New Nobe</title>
+</head>
+<div class="align-items: center">
   
-
-  <button (click)="submitNobe(newNobe)">Submit</button>
+  <button class="createNewNobe" (click)="toggleDisplay()">Add a Nobe</button>
 </div>
-<h3>
+<body>
+<div  *ngIf="displayForm">
+      <div class="form" *ngIf="(loggedIn == false) && (displayForm == true)">
+        <!-- change loggedin to true once you have this figured out -->
+        <h2>New Nobe</h2>
+        <br>
+        <textarea cols="40" rows="1"  placeholder="Nobe Title"[(ngModel)]="newNobe.nobeName" name="Title"></textarea>
+        <br>
+        <br>
+
+        <!-- <input type="text" placeholder="Name" [(ngModel)]="newNobe.nobeName" />
+        <p>Category</p> -->
+        
+        <select [(ngModel)]="newNobe.category">
+          <option value="">Select a category</option>
+          
+          <option *ngFor="let category of displayCategories" [value]="category.categoryName">
+            {{ category.categoryName }}
+          </option>
+        </select>
+        <br>
+        <br>
+        <textarea cols="40" rows="3" placeholder="Description"[(ngModel)]="newNobe.description" name="Description"></textarea>
+        <br>
+        <input type="text" placeholder="upload image"[(ngModel)]="newNobe.icon" name="Image">
+        <br>
+        <br>
+        <input type="file" (change)="onFileSelected($event)">
+        
+        <button (click)="submitNobe(newNobe)">Submit</button>
+      </div>
+</div>
+</body>
+</html>
   
   
   <!-- since the points is default set to 0, I don't need this dropdown -->

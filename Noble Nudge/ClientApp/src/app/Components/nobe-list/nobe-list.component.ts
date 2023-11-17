@@ -16,6 +16,8 @@ export class NobeListComponent implements OnInit {
   userGoogleID: string = "";
   nobeFavorited: boolean = false;
   nobeDeleted:boolean = false;
+  sortingDecending:boolean = true;
+
 
 
   @Output() faveAdded = new EventEmitter<Favorite>();
@@ -39,6 +41,13 @@ export class NobeListComponent implements OnInit {
     
     });
   }
+
+  getNobesByNewest(): Nobe[] {
+    // this.userName = this._userService.user;
+
+    return this.allNobesList.reverse();
+  }
+
 
 
   fetchAddNewNobe(newNobe: Nobe) {
@@ -64,11 +73,6 @@ export class NobeListComponent implements OnInit {
     });
   }
 
-  getNobesByNewest(): Nobe[] {
-    // this.userName = this._userService.user;
-
-    return this.allNobesList.reverse();
-  }
 
   fetchAddNobeToFave(nobe: Nobe) {
     // this.userName = this._userService.user;
@@ -110,13 +114,27 @@ fetchDeleteNobe(id: number) {
       this.fetchGetAllNobes();
 });
 }
+// sortNobesByVotesDecending():void{
+//   this.sortingDecending = true;
+//   this.allNobesList.sort((a,b) => b.points - a.points)
+//   //if b - a is negative then b should come before a, 
+//   //if b - a is zero then there is no change
+// }
+// sortNobesByVotesAscending():void{
+//   this.sortingDecending = false;
+//   this.allNobesList.sort((a,b) => a.points - b.points)
+//   //if b - a is negative then b should come before a, 
+//   //if b - a is zero then there is no change
+// }
+
+}
 
 // callDeleteEvent():void{
 //   this._eventService.emit(this.individualPost)
 //   this._eventService={} as Event;
 //   this.postDeleted = true;
 // }
-}
+
 // deleteEvent(id: number): Observable<Event>{
 //   return this.http.delete<Event>(`${this.baseUrl}api/Events/${id}`);
 // }
