@@ -1,6 +1,111 @@
-<app-share></app-share>
-<p>Hello</p>
-<app-user></app-user>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Noble Nudge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        
+        h1 h2 h3 {
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+        p {
+            font-family: 'Poppins', sans-serif;
+        }
+        h4 h5 h6 {
+            font-family: 'Cedarville Cursive', cursive;
+
+        }
+        h6 {
+            
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            text-align: left;
+            padding: 20px;
+            overflow: hidden;
+            background: #333; /* Background color for better visibility */
+            color: #fff;
+        }
+
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            /* On larger screens, display text and image side by side */
+            .hero {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .hero img {
+                margin-top: 0;
+                margin-left: 20px;
+            }
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div>
+            <h1>Welcome to Noble Nudge</h1>
+            <p>The ultimate online platform dedicated to celebrating and spreading acts of kindness!</p>
+        </div>
+        <img src="assets/holding-hands.png" alt="Hero Image"> <!-- Replace 'your-image.jpg' with your image file -->
+    </div>
+
+</body>
+</html>
+
+    
+<p> 
+
+At Noble Nudge, we believe in the power of positivity and the profound impact that small acts of kindness can have on the world. Our platform is designed for individuals like you who are committed to making a difference in the lives of others.
+<p> 
+
+Share your inspiring acts of kindness, or as we like to call them, "Nobes", and watch the ripple effect of positivity grow. Whether it's mentoring, expressing gratitude, spreading positivity, helping animals, or contributing to charity, our diverse range of Nobe categories allows you to showcase the breadth of kindness in action.
+</p>
+<p> 
+
+Here's how it works: Perform a noble deed, share it on Noble Nudge, and let the community join in celebrating your kindness. Users can upvote Nobes that resonate with them, creating a culture of appreciation and encouragement. Your Nobes not only inspire others but also contribute to a collective wave of goodwill that fosters a sense of unity and compassion.
+</p>
+<p> 
+
+Join our growing community and become part of a movement dedicated to making the world a better place, one Nobe at a time. Start spreading kindness, inspire others, and let's create a world where noble deeds are recognized, appreciated, and celebrated. Together, we can make a positive impact that transcends borders and brings people closer through the universal language of kindness. Welcome to Noble Nudge – where every act of kindness matters!
+
+
+</p>
+
 <app-categories></app-categories>
 <app-nobe-form></app-nobe-form>
 <app-nobe-list></app-nobe-list>
