@@ -5,8 +5,9 @@ export interface Nobe {
     nobeId: number;
     nobeName?: string ;
     category?: string ;
-    points?: number ;
+    points: number ;
     icon: string;
     users: Users[];
+    description: string;
   }
   

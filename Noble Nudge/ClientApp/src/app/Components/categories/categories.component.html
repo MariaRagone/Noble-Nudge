@@ -1,4 +1,18 @@
-<p>categories works!</p>
-<div *ngFor="let c of allCategoriesList">
-    <div>{{ c.categoryName }}</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito&display=swap" rel="stylesheet">
+</head>
+
+<h1>Nobe Categories</h1>
+<div class="card-container">
+    <div class="card" *ngFor="let c of allCategoriesList">
+        <div class="container">{{ c.categoryName }}</div>
+        <div class="image-container">
+            <img src="{{c.iconImage}}">
+        </div>
+    </div>
 </div>

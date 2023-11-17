@@ -13,6 +13,7 @@ import { ShareComponent } from './Components/share/share.component';
 import { NobeFormComponent } from './Components/nobe-form/nobe-form.component';
 import { NobeListComponent } from './Components/nobe-list/nobe-list.component';
 import { CategoriesComponent } from './Components/categories/categories.component';
+import { NobeComponent } from './Components/nobe/nobe.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CategoriesComponent } from './Components/categories/categories.componen
     ShareComponent,
     NobeFormComponent,
     NobeListComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    NobeComponent
     ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

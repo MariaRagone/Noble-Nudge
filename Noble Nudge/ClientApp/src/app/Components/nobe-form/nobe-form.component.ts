@@ -23,6 +23,7 @@ export class NobeFormComponent implements OnInit {
     icon: '',
     category: '',
     points: 1,
+    description: '',
   };
 
   nobeList: Nobe [] = [];
@@ -46,10 +47,11 @@ export class NobeFormComponent implements OnInit {
   }
   //sends from the ts to the backend/service
   submitNobe(newNobe:Nobe): void {
+    newNobe.points = 0;
     this._nobeInfoService.addNewNobe(newNobe).subscribe((response: Nobe) => {
       this.nobeList.push(response);
       newNobe = response;
-      console.log(newNobe);
+        console.log(newNobe);
       this.newNobe = {} as Nobe; //resets all form fields after submit
     });
   }

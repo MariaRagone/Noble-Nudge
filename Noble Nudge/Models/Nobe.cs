@@ -14,4 +14,6 @@ public partial class Nobe
     public int? Points { get; set; }
 
     public byte[]? Icon { get; set; }
+
+    public string? Description { get; set; }
 }

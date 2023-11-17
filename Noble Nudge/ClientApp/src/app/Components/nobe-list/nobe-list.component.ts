@@ -35,6 +35,8 @@ export class NobeListComponent implements OnInit {
     this._nobeService.getAllNobes().subscribe((response: Nobe[]) => {
       console.log(response);
       this.allNobesList = response;
+      this.allNobesList.reverse();
+    
     });
   }
 
