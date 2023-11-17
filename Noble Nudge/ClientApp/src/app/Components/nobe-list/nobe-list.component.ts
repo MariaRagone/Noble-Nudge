@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Favorite } from 'src/app/Models/favorite';
 import { Nobe } from 'src/app/Models/nobe';
 import { NobeService } from 'src/app/Services/nobe.service';
@@ -17,11 +17,10 @@ export class NobeListComponent implements OnInit {
   nobeFavorited: boolean = false;
   nobeDeleted:boolean = false;
   sortingDecending:boolean = true;
-
-
+  sortingNewest:boolean = true;
 
   @Output() faveAdded = new EventEmitter<Favorite>();
-
+  @Input() individualNobe:Nobe = {} as Nobe;
 
   constructor(
     private _nobeService: NobeService, 
@@ -33,22 +32,24 @@ export class NobeListComponent implements OnInit {
 
   fetchGetAllNobes() {
     // this.userName = this._userService.user;
-
     this._nobeService.getAllNobes().subscribe((response: Nobe[]) => {
       console.log(response);
       this.allNobesList = response;
+      this.sortingNewest = true; 
       this.allNobesList.reverse();
     
     });
   }
 
-  getNobesByNewest(): Nobe[] {
-    // this.userName = this._userService.user;
-
-    return this.allNobesList.reverse();
-  }
-
-
+  // getNobesByOldest() {
+  //   this._nobeService.getAllNobes().subscribe((response: Nobe[]) => {
+  //     console.log(response);
+  //     this.allNobesList = response;
+  //     this.sortingNewest = false; 
+  //     this.allNobesList;
+    
+  //   });
+  // }
 
   fetchAddNewNobe(newNobe: Nobe) {
     // this.userName = this._userService.user;
@@ -73,7 +74,6 @@ export class NobeListComponent implements OnInit {
     });
   }
 
-
   fetchAddNobeToFave(nobe: Nobe) {
     // this.userName = this._userService.user;
 
@@ -87,7 +87,7 @@ export class NobeListComponent implements OnInit {
       });
   }
 
-  fetchRemoveEventFromFave(nobe: Nobe) {
+  fetchRemoveNobeFromFave(nobe: Nobe) {
     // this.userName = this._userService.user;
 
     let newFave: Favorite = {} as Favorite;
@@ -99,12 +99,7 @@ export class NobeListComponent implements OnInit {
         this.allFavoritesList.push(response);
   });
 }
-// callGetEventsByCategory(Category: Event):void{
-//   this._eventService.getEventsByCategory(Category).subscribe((response: Event[]) => {
-//     console.log(response);
-//     this.allEventList = response;
-//   });
-// }
+
 fetchDeleteNobe(id: number) {
   // this.userName = this._userService.user;
 
@@ -114,33 +109,18 @@ fetchDeleteNobe(id: number) {
       this.fetchGetAllNobes();
 });
 }
-// sortNobesByVotesDecending():void{
-//   this.sortingDecending = true;
-//   this.allNobesList.sort((a,b) => b.points - a.points)
-//   //if b - a is negative then b should come before a, 
-//   //if b - a is zero then there is no change
-// }
-// sortNobesByVotesAscending():void{
-//   this.sortingDecending = false;
-//   this.allNobesList.sort((a,b) => a.points - b.points)
-//   //if b - a is negative then b should come before a, 
-//   //if b - a is zero then there is no change
-// }
-
+sortNobesByVotesDecending():void{
+  this.sortingDecending = true;
+  this.allNobesList.sort((a,b) => b.points - a.points)
+  //if b - a is negative then b should come before a, 
+  //if b - a is zero then there is no change
+}
+sortNobesByVotesAscending():void{
+  this.sortingDecending = false;
+  this.allNobesList.sort((a,b) => a.points - b.points)
+  //if b - a is negative then b should come before a, 
+  //if b - a is zero then there is no change
 }
 
-// callDeleteEvent():void{
-//   this._eventService.emit(this.individualPost)
-//   this._eventService={} as Event;
-//   this.postDeleted = true;
-// }
-
-// deleteEvent(id: number): Observable<Event>{
-//   return this.http.delete<Event>(`${this.baseUrl}api/Events/${id}`);
-// }
-
-// removeEventFromFave(removedFavorite:Favorite): Observable<Favorite>{
-//   return this.http.delete<Favorite>(`${this.baseUrl}api/Events/Favorite?UserName=${removedFavorite.userName}&EventId=${removedFavorite.eventId}`);
-// }
-
+}
 

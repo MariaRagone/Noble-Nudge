@@ -14,6 +14,7 @@ import { NobeFormComponent } from './Components/nobe-form/nobe-form.component';
 import { NobeListComponent } from './Components/nobe-list/nobe-list.component';
 import { CategoriesComponent } from './Components/categories/categories.component';
 import { NobeComponent } from './Components/nobe/nobe.component';
+import { NobesPageComponent } from './Components/nobes-page/nobes-page.component';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { NobeComponent } from './Components/nobe/nobe.component';
     NobeFormComponent,
     NobeListComponent,
     CategoriesComponent,
-    NobeComponent
+    NobeComponent,
+    NobeListComponent,
+    NobesPageComponent
     ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,9 +42,11 @@ import { NobeComponent } from './Components/nobe/nobe.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'add-nobe', component: NobeFormComponent },
-      { path: 'all-nobes', component: NobeListComponent },
+      { path: 'nobes-list', component: NobeListComponent },
       { path: 'all-categories', component: CategoriesComponent },
-      { path: 'nobe', component: NobeComponent}
+      { path: 'nobe', component: NobeComponent},
+      { path: 'nobes-page', component: NobesPageComponent},
+
     ])
   ],
   providers: [],

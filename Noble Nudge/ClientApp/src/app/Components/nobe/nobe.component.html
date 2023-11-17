@@ -16,7 +16,7 @@
                         </div>
                         <p>{{individualNobe.description}}</p>
                         <span class="tag">{{individualNobe.points}} Votes </span>
-                        <button  *ngIf="!voted" (click)="upVotePost()" >Upvote!</button>
+                        <button  *ngIf="!voted" (click)="upVoteNobe()" >Upvote!</button>
                         <button  *ngIf="voted"(click)="removeVote()">Remove vote</button>
                         <div class="icon">
 

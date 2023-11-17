@@ -18,6 +18,7 @@ export class NobeComponent implements OnInit {
   @Output() faveAdded = new EventEmitter<Favorite>();
   @Input() individualNobe:Nobe = {} as Nobe;
   newNobe:Nobe={} as Nobe;
+  
 
 
   constructor(
@@ -26,7 +27,7 @@ export class NobeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  upVotePost():void{
+  upVoteNobe():void{
 
     this.newNobe.points ++;
     this.voted = true;

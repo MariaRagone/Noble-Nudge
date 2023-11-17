@@ -1,0 +1,22 @@
+button {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin: 8px 8px 8px 8px;
+    padding: 8px 8px 8px 8px;
+    padding: 10px, 10px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #209D5C;
+    /* Button is inline-block element by default, it need to have block display for margin: 0 auto; to work */
+    margin: 0 auto;
+    display: block;
+    /* Button is a clickable element, therefore it should have a pointer cursor */
+    cursor: pointer;
+  }
+
+  button:focus, button:hover {
+  background-color: #ffffff;
+  color: #FF914D;
+}

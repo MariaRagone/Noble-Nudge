@@ -1,0 +1,15 @@
+<h1>All Nobes</h1>
+<h6 style="float: right;">Sort Nobes</h6>
+<p></p>
+<br>
+
+<button style="float: right;" *ngIf="!sortingDecending" (click)="sortNobesByVotesDecending()">More Votes</button>
+<button style="float: right;"  *ngIf="sortingDecending" (click)="sortNobesByVotesAscending()">Less Votes</button>
+<button style="float: right;"  *ngIf="sortingNewest" (click)="getNobesByOldest()">Oldest</button>
+<button style="float: right;"  *ngIf="!sortingNewest" (click)="fetchGetAllNobes()">Newest</button>
+<br>
+<br>
+<div id="container">
+    <!-- Loop through listPosts and generate cards -->
+    <app-nobe-list *ngFor="let n of getNobesByOldest()" [individualNobe]="n"></app-nobe-list>
+</div>
