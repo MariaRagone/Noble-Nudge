@@ -18,6 +18,12 @@ export class NobeListComponent implements OnInit {
   nobeDeleted:boolean = false;
   sortingDecending:boolean = true;
   sortingNewest:boolean = true;
+  displayForm:boolean = false;
+  voted:boolean = false;
+  newNobe:Nobe={} as Nobe;
+
+
+  @Output() deleted = new EventEmitter<Nobe>();
 
   @Output() faveAdded = new EventEmitter<Favorite>();
   @Input() individualNobe:Nobe = {} as Nobe;
@@ -121,6 +127,23 @@ sortNobesByVotesAscending():void{
   //if b - a is negative then b should come before a, 
   //if b - a is zero then there is no change
 }
+upVoteNobe():void{
+
+  this.newNobe.points ++;
+  this.voted = true;
+
+}
+removeVote():void{
+  this.newNobe.points --;
+  this.voted = false;
+
+}
+deleteNobe():void{
+  this.deleted.emit(this.individualNobe)
+  this.individualNobe={} as Nobe;
+  this.nobeDeleted = true;
+}
+
 
 }
 

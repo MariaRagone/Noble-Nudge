@@ -9,6 +9,7 @@
 <button style="float: right;"  *ngIf="!sortingNewest" (click)="fetchGetAllNobes()">Newest</button>
 <br>
 <br>
+<app-nobe-list></app-nobe-list>
 <div id="container">
     <!-- Loop through listPosts and generate cards -->
     <app-nobe-list *ngFor="let n of getNobesByOldest()" [individualNobe]="n"></app-nobe-list>

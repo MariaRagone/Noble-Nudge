@@ -8,7 +8,13 @@
         <div>Votes: {{ n.points }}  </div>
         <div>{{n.icon}}</div>
         <div class="image-container">
-          <img src="{{ n.icon }}" />
+          <!-- <img src="{{ n.icon }}" /> -->
+          <button  *ngIf="!voted" (click)="upVoteNobe()" >Upvote!</button>
+          <button  *ngIf="voted"(click)="removeVote()">Remove vote</button>
+          <div class="icon">
+
+              <i class="fa fa-trash" (click)="deleteNobe()"></i>
+
           <button id="heart" (click)="fetchAddNobeToFave(n)"><i class="fas fa-heart"></i></button>
           <button id="trash" (click)="fetchDeleteNobe(n.nobeId)"><i class="fas fa-trash"></i></button>
           
