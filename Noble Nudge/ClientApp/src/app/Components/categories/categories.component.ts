@@ -22,14 +22,11 @@ export class CategoriesComponent implements OnInit {
     
     fetchGetAllCategories() {
       // this.userName = this._userService.user;
-  
       this._categoryService.getAllCategories().subscribe((response: Categories[]) => {
         console.log(response);
         this.allCategoriesList = response;
       });
     }
-  
-  
   }
 
 
