@@ -10,7 +10,9 @@
         <div class="image-container">
           <!-- <img src="{{ n.icon }}" /> -->
           <button  *ngIf="!voted" (click)="upVoteNobe()" >Upvote!</button>
-          <button  *ngIf="voted"(click)="removeVote()">Remove vote</button>
+          <p>Hello</p>
+          <p *ngIf="voted">You already voted</p>
+          <!-- <button  *ngIf="voted"(click)="removeVote()">Remove vote</button> -->
           <div class="icon">
 
               <i class="fa fa-trash" (click)="deleteNobe()"></i>
