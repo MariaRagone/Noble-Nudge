@@ -1,123 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Noble Nudge</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        
-        h1 h2 h3 {
-            font-weight: bold;
-            font-family: 'Poppins', sans-serif;
-        }
-        p {
-            font-family: 'Poppins', sans-serif;
-        }
-        h4 h5 h6 {
-            font-family: 'Cedarville Cursive', cursive;
+      h1 h2 h3 {
+        font-weight: bold;
+        font-family: "Poppins", sans-serif;
+      }
+      p {
+        font-family: "Poppins", sans-serif;
+      }
+      h4 h5 h6 {
+        font-family: "Cedarville Cursive", cursive;
+      }
+      h6 {
+        font-family: "Nunito", sans-serif;
+      }
 
-        }
-        h6 {
-            
-            font-family: 'Nunito', sans-serif;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+      }
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
+      /* .hero {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        padding: 50px;
+        padding-left: 50px;
+        /* overflow: hidden; */
+        /* background: #209d5c;  */
+        /* border-radius: 20px;
+        color: #fff;
+      } */
+ */
+      .hero img {
+        max-width: 50%;
+        /* height: auto; */
+        margin-top: 20px;
+        border-radius: 1000px;
+      }
 
+      @media (min-width: 768px) {
+        /* On larger screens, display text and image side by side */
+        /* .hero {
+          flex-direction: row;
+          align-items: center;
+        } */
         .hero {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: left;
-            padding: 50px;
-            padding-left: 50px;
-            /* overflow: hidden; */
-            background: #209D5C; /* Background color for better visibility */
-            color: #fff;
+          position: relative;
+          display: inline-block; /* Ensures the container only takes up the space of the image */
+          /* background-color: #F495A0 ;
+          background-size: cover; */
+        }
+
+        .overlay-heading {
+          position:absolute;
+          top: 40%; /* Adjust as needed to vertically center the text */
+          left: 31%; /* Adjust as needed to horizontally center the text */
+          transform: translate(-50%, -50%); /* Center the text precisely */
+          color: white; /* Text color */
+          font-size: 40px; /* Adjust as needed */
+          font-weight: bold; /* Adjust as needed */
+          /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  */
+        }
+        .overlay-text {
+          position:absolute;
+          top: 50%; /* Adjust as needed to vertically center the text */
+          left: 11%; /* Adjust as needed to horizontally center the text */
+          color: white; /* Text color */
+          max-width: 350px;
+          font-size: 18px; /* Adjust as needed */
+          font-weight: bold; /* Adjust as needed */
         }
 
         .hero img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
+          margin-top: 0;
+          margin-left: 20px;
+        }
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+        margin-top: 0;
+      }
+      .overlay-button {
+          position:absolute;
+          top: 65%; /* Adjust as needed to vertically center the text */
+          left: 23%; /* Adjust as needed to horizontally center the text */
+          color: white; /* Text color */
+          max-width: 350px;
+          font-size: 18px; /* Adjust as needed */
+          font-weight: bold; /* Adjust as needed */
+         
         }
 
-        @media (min-width: 768px) {
-            /* On larger screens, display text and image side by side */
-            .hero {
-                flex-direction: row;
-                align-items: center;
-            }
-
-            .hero img {
-                margin-top: 0;
-                margin-left: 20px;
-            }
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            margin-top: 0;
-        }
-        button {
-    background-color: white;
-    border: none;
-    border-radius: 20px;
-    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
-    color: blue;
-    padding: 10px 20px; /* Adjust padding as needed */
-}
-
+      button {
+        background-color: white;
+        border: none;
+        border-radius: 20px;
+        /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
+        color: #F495A0;
+        padding: 10px 20px; /* Adjust padding as needed */
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="hero">
-        <div>
-            <h1>Welcome to Noble Nudge</h1>
-            <p>The ultimate online platform dedicated to celebrating and spreading acts of kindness!</p>
-            <div class="button">
-                <button style="float: left;" [routerLink]="['/add-nobe']">Add a Nobe</button>
-            </div>
-            
-        </div>
-        <img src="assets/holding-hands.png" alt="Hero Image of holding hands"> 
+        <img src="assets/hero-hands-holding-heart.png" alt="Your Image">
+        <div class="overlay-heading">Welcome to Noble Nudge</div>
+        <div class="overlay-text">Ignite change through kindness. Share your Nobes, 
+            inspire a ripple effect, and join a global movement for good.</div>
+    </div>
+      <div class="overlay-button">
+        <button style="float: left" [routerLink]="['/add-nobe']">
+          Add a Nobe
+        </button>
     </div>
 
-</body>
+      
+    <!-- <div class="hero"> -->
+      <!-- <div>
+        <h1>Welcome to Noble Nudge</h1>
+        <p>
+          The ultimate online platform dedicated to celebrating and spreading
+          acts of kindness!
+        </p>
+        </div>
+      </div> -->
+      <!-- <img src="assets/holding-hands.png" alt="Hero Image of holding hands" /> -->
+  </body>
 </html>
 
-    
-<p> 
-
-At Noble Nudge, we believe in the power of positivity and the profound impact that small acts of kindness can have on the world. Our platform is designed for individuals like you who are committed to making a difference in the lives of others.
-<p> 
-
-Share your inspiring acts of kindness, or as we like to call them, "Nobes", and watch the ripple effect of positivity grow. Whether it's mentoring, expressing gratitude, spreading positivity, helping animals, or contributing to charity, our diverse range of Nobe categories allows you to showcase the breadth of kindness in action.
+<p>
+  At Noble Nudge, we believe in the power of positivity and the profound impact
+  that small acts of kindness can have on the world. Our platform is designed
+  for individuals like you who are committed to making a difference in the lives
+  of others.
 </p>
-<p> 
 
-Here's how it works: Perform a noble deed, share it on Noble Nudge, and let the community join in celebrating your kindness. Users can upvote Nobes that resonate with them, creating a culture of appreciation and encouragement. Your Nobes not only inspire others but also contribute to a collective wave of goodwill that fosters a sense of unity and compassion.
+<p>
+  Share your inspiring acts of kindness, or as we like to call them, "Nobes",
+  and watch the ripple effect of positivity grow. Whether it's mentoring,
+  expressing gratitude, spreading positivity, helping animals, or contributing
+  to charity, our diverse range of Nobe categories allows you to showcase the
+  breadth of kindness in action.
 </p>
-<p> 
-
-Join our growing community and become part of a movement dedicated to making the world a better place, one Nobe at a time. Start spreading kindness, inspire others, and let's create a world where noble deeds are recognized, appreciated, and celebrated. Together, we can make a positive impact that transcends borders and brings people closer through the universal language of kindness. Welcome to Noble Nudge – where every act of kindness matters!
-
-
+<p>
+  Here's how it works: Perform a noble deed, share it on Noble Nudge, and let
+  the community join in celebrating your kindness. Users can upvote Nobes that
+  resonate with them, creating a culture of appreciation and encouragement. Your
+  Nobes not only inspire others but also contribute to a collective wave of
+  goodwill that fosters a sense of unity and compassion.
+</p>
+<p>
+  Join our growing community and become part of a movement dedicated to making
+  the world a better place, one Nobe at a time. Start spreading kindness,
+  inspire others, and let's create a world where noble deeds are recognized,
+  appreciated, and celebrated. Together, we can make a positive impact that
+  transcends borders and brings people closer through the universal language of
+  kindness. Welcome to Noble Nudge – where every act of kindness matters!
 </p>
 
 <app-categories></app-categories>
@@ -125,4 +185,3 @@ Join our growing community and become part of a movement dedicated to making the
     
     <button class="home-button" type="submit" [routerLink]="['/add-nobe']">Add a Nobe!</button> 
 </div> -->
-
