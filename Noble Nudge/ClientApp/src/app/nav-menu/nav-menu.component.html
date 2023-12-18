@@ -2,7 +2,7 @@
   <nav
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
-    <div class="container">
+    <div class="container" style="padding-left: 30px;">
       
       <a class="navbar-brand" [routerLink]="['/']"><img width="300px" src="assets\noble_nudge_logo_care.png"></a>
       <button
@@ -26,17 +26,17 @@
             [routerLinkActive]="['link-active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="links" [routerLink]="['/']">Home</a>
           </li>
           <li
           class="nav-item"
           [routerLinkActive]="['link-active']"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <a class="nav-link text-dark" [routerLink]="['/nobes-page']">Nobes</a>
+          <a class="links" [routerLink]="['/nobes-page']">Nobes</a>
         </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/add-nobe']"
+            <a class="links" style="padding-right: 100px;" [routerLink]="['/add-nobe']"
               >Add Nobe</a
             >
           </li>

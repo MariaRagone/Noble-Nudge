@@ -2,7 +2,7 @@
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: #E57480;
 }
 
 code {
@@ -13,4 +13,14 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+.button {
+  background-color:#f495a0;
+  border: none;
+  border-radius: 20px;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
+  color: white;
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-weight: bold;
 }

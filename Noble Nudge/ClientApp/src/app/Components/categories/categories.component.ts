@@ -18,14 +18,15 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
       this.fetchGetAllCategories();
+      
     }
-    
     fetchGetAllCategories() {
       // this.userName = this._userService.user;
       this._categoryService.getAllCategories().subscribe((response: Categories[]) => {
         console.log(response);
         this.allCategoriesList = response;
       });
+      
     }
   }
 
