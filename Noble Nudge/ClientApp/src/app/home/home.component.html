@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Welcome to Noble Nudge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,11 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Nunito&family=Poppins:wght@300&display=swap"
       rel="stylesheet"
     />
+
     <style>
       p {
         color: #f495a0;
         padding-right: 10%;
-        font-weight:100;
+        font-weight: 100;
         font-family: "Poppins", sans-serif;
       }
 
@@ -22,7 +24,6 @@
         font-weight: bold;
         font-family: "Poppins", sans-serif;
         color: white;
-        
       }
       h4 h5 h6 {
         font-family: "Cedarville Cursive", cursive;
@@ -52,29 +53,30 @@
         color: #fff;
       } */
 
-        .overlay-heading {
-          position: absolute;
-          top: 50%; /* Adjust as needed to vertically center the text */
-          left: 32%; /* Adjust as needed to horizontally center the text */
-          transform: translate(-50%, -50%); /* Center the text precisely */
-          color: white; /* Text color */
-          font-size: 40px; /* Adjust as needed */
-          font-weight: bold; /* Adjust as needed */
-          /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  */
-        }
-        .overlay-text {
-          position: absolute;
-          top: 55%; /* Adjust as needed to vertically center the text */
-          left: 19%; /* Adjust as needed to horizontally center the text */
-          color: white; /* Text color */
-          max-width: 350px;
-          font-size: 18px; /* Adjust as needed */
-          font-weight: bold; /* Adjust as needed */
-        }
+      .overlay-heading {
+        position: absolute;
+        top: 50%; /* Adjust as needed to vertically center the text */
+        left: 32%; /* Adjust as needed to horizontally center the text */
+        transform: translate(-50%, -50%); /* Center the text precisely */
+        color: white; /* Text color */
+        font-size: 40px; /* Adjust as needed */
+        font-weight: bold; /* Adjust as needed */
+        /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  */
+      }
+      .overlay-text {
+        display: flex;
+        position: absolute;
+        top: 55%; /* Adjust as needed to vertically center the text */
+        left: 19%; /* Adjust as needed to horizontally center the text */
+        color: white; /* Text color */
+        max-width: 350px;
+        font-size: 18px; /* Adjust as needed */
+        font-weight: bold; /* Adjust as needed */
+      }
 
       .overlay-button {
         position: absolute;
-        top: 67%; /* Adjust as needed to vertically center the text */
+        top: 73%; /* Adjust as needed to vertically center the text */
         left: 19%; /* Adjust as needed to horizontally center the text */
         color: white; /* Text color */
         max-width: 350px;
@@ -90,165 +92,205 @@
         color: #f495a0;
         padding: 10px 20px; /* Adjust padding as needed */
         font-weight: bold;
-}
+      }
 
-.container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    padding-top: 10%;
-}
+      .container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding-top: 10%;
+      }
 
-.left-column {
-    flex: 1;
-    text-align: left;
-    padding: 20px; /* Adjust padding as needed */
-}
+      .left-column {
+        flex: 1;
+        text-align: left;
+        padding: 20px; /* Adjust padding as needed */
+      }
 
-.right-column {
-    flex: 1;
-    text-align: left;
-    padding: 20px;
-}
+      .right-column {
+        flex: 1;
+        text-align: left;
+        padding: 20px;
+      }
 
-.heading {
-    font-size: 40px; /* Adjust font size as needed */
-    font-weight: bold;
-    margin-bottom: 10px; /* Adjust margin as needed */
-    font-weight: bold;
-    font-family: "Poppins", sans-serif;
-    color: #f495a0;
-}
-.button {
-        background-color:#f495a0;
+      .heading {
+        font-size: 40px; /* Adjust font size as needed */
+        font-weight: bold;
+        margin-bottom: 10px; /* Adjust margin as needed */
+        font-weight: bold;
+        font-family: "Poppins", sans-serif;
+        color: #f495a0;
+      }
+      .button {
+        background-color: #f495a0;
         border: none;
         border-radius: 20px;
         /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
         color: white;
         padding: 10px 20px; /* Adjust padding as needed */
         font-weight: bold;
-}
+      }
 
+      .circular-image {
+        border-radius: 50%;
+        width: 250; /* Adjust the image width as needed */
+        height: 250px; /* Adjust the image height as needed */
+        object-fit: cover;
+        margin-top: 20px; /* Adjust margin as needed */
+      }
+      .centered-block {
+        background-color: #f495a0;
+        padding: 5%;
+        width: 80%;
+        margin: 0 auto; /* Centering using margin */
+        margin-top: 100px;
+        text-align: center;
+      }
 
+      .inner-block {
+        color: white;
+        font-family: poppins;
+      }
 
-
-.circular-image {
-    border-radius: 50%;
-    width: 250; /* Adjust the image width as needed */
-    height: 250px; /* Adjust the image height as needed */
-    object-fit: cover;
-    margin-top: 20px; /* Adjust margin as needed */
-}
-.centered-block {
-    background-color: #f495a0;
-    padding: 5%;
-    width: 80%;
-    margin: 0 auto; /* Centering using margin */
-    margin-top: 100px;
-    text-align: center;
-}
-
-.inner-block {
-    color: white;
-    font-family: poppins;
-}
-
-
-.description {
-    color: white;
-}
-
-
+      .description {
+        color: white;
+      }
+      @media (max-width: 1200px) {
+        .hero-image {
+          content: url('assets/Hero-700.png'); /* Replace with your alternate hero image path */
+          width: 700px;
+        }
+        @media (max-width: 700px) {
+        .hero-image {
+          content: url('assets/Hero-300.png'); /* Replace with your alternate hero image path */
+          max-width: 300px;
+          align-items: center;
+        }
+        
+      }
+        }
+    
+    
+      
     </style>
   </head>
   <body>
-    <div class="hero">
-      <img src="assets/hero-hands-holding-heart.png" alt="Your Image" />
-      <div class="overlay-heading">Welcome to Noble Nudge</div>
-      <div class="overlay-text">
-        Ignite change through kindness. Share your Nobes, inspire a ripple
-        effect, and join a global movement for good.
+    <div>
+        <h3 style="color:#f495a0">
+            This site is a work in progress. Thank you for viewing.
+        </h3>
       </div>
-    </div>
-    <div class="overlay-button">
-      <button style="float: left" [routerLink]="['/add-nobe']">
-        Add a Nobe
-      </button>
-    </div>
+      <a href="/add-nobe">
+      <div class="hero-image">
+          <img class="hero-image" src="assets/Hero-1200.png" 
+          alt="Welcome to Noble Nudge. Ignite change through acts of kindness or as we like to call them 'Nobes'. 
+          Share your Nobes, inspire a ripple effect, and join a global movement for good." />
+        </div>
+    </a>
+      
+      
+
   </body>
 </html>
 
 <!-- Container 1 -->
 
 <div class="container">
-    <div class="left-column">
-        <div class="heading">Spread Kindness</div>
-        <p> Join our growing community and become part of a movement dedicated to making the world a better place, 
-            one Nobe at a time. Start spreading kindness, inspire others, and let's create a world where noble 
-            deeds are recognized, appreciated, and celebrated. Together, we can make a positive 
-            impact that transcends borders and brings people closer through the universal language of kindness. 
-        </p>
-        <button class="button" [routerLink]="['/add-nobe']">
-            Add a Nobe</button>
-    </div>
-    <div class="right-column">
-        <img src="assets\hands-holding-rose.png" alt="4 sets of hands holding hands" class="circular-image">
-    </div>
+  <div class="left-column">
+    <div class="heading">Spread Kindness</div>
+    <p>
+      Join our growing community and become part of a movement dedicated to
+      making the world a better place, one Nobe at a time. Start spreading
+      kindness, inspire others, and let's create a world where noble deeds are
+      recognized, appreciated, and celebrated. Together, we can make a positive
+      impact that transcends borders and brings people closer through the
+      universal language of kindness.
+    </p>
+    <button class="button" [routerLink]="['/add-nobe']">Add a Nobe</button>
+  </div>
+  <div class="right-column">
+    <img
+      src="assets\hands-holding-rose.png"
+      alt="4 sets of hands holding hands"
+      class="circular-image"
+    />
+  </div>
 </div>
-
 
 <!-- Container 2 -->
 <div class="container">
-    <div class="left-column">
-        <img src="assets/holding-hands-sq.png" alt="4 sets of hands holding hands" class="circular-image">
-    </div>
-    <div class="right-column">
-        <div class="heading">Inspire Others</div>
-        <p> Share your inspiring acts of kindness, or as we like to call them, "Nobes",
-            and watch the ripple effect of positivity grow. Whether it's mentoring,
-            expressing gratitude, spreading positivity, helping animals, or contributing
-            to charity, our diverse range of Nobe categories allows you to showcase the
-            breadth of kindness in action.</p>
-        <button class="button" [routerLink]="['/add-nobe']">
-            Add a Nobe</button>
-    </div>
-
+  <div class="left-column">
+    <img
+      src="assets/holding-hands-sq.png"
+      alt="4 sets of hands holding hands"
+      class="circular-image"
+    />
+  </div>
+  <div class="right-column">
+    <div class="heading">Inspire Others</div>
+    <p>
+      Share your inspiring acts of kindness, or as we like to call them,
+      "Nobes", and watch the ripple effect of positivity grow. Whether it's
+      mentoring, expressing gratitude, spreading positivity, helping animals, or
+      contributing to charity, our diverse range of Nobe categories allows you
+      to showcase the breadth of kindness in action.
+    </p>
+    <button class="button" [routerLink]="['/add-nobe']">Add a Nobe</button>
+  </div>
 </div>
 <!-- Container 3 -->
 
 <div class="container">
-    <div class="left-column">
-        <div class="heading">Make an Impact</div>
-        <p> At Noble Nudge, we believe in the power of positivity and the profound impact
-            that small acts of kindness can have on the world. Our platform is designed
-            for individuals like you who are committed to making a difference in the lives
-            of others.</p>
-        <button class="button" [routerLink]="['/add-nobe']">
-            Add a Nobe</button>
-    </div>
-    <div class="right-column">
-        <img src="assets/kids-hugging.png" alt="4 sets of hands holding hands" class="circular-image">
-    </div>
+  <div class="left-column">
+    <div class="heading">Make an Impact</div>
+    <p>
+      At Noble Nudge, we believe in the power of positivity and the profound
+      impact that small acts of kindness can have on the world. Our platform is
+      designed for individuals like you who are committed to making a difference
+      in the lives of others.
+    </p>
+    <button class="button" [routerLink]="['/add-nobe']">Add a Nobe</button>
+  </div>
+  <div class="right-column">
+    <img
+      src="assets/kids-hugging.png"
+      alt="4 sets of hands holding hands"
+      class="circular-image"
+    />
+  </div>
 </div>
 
 <!-- Centered Block -->
-  <div class="centered-block">
-    <div class="inner-block">
-        <div style="color: white; font-family: poppins; font-size: 40px; text-align: center; font-weight: bold; padding-bottom: 10px;">How it works</div>        
-        <div class="description">Perform a noble deed, share it on Noble Nudge, 
-            and let the community join in celebrating your kindness. Users can upvote Nobes that resonate 
-            with them, creating a culture of appreciation and encouragement. Your Nobes not only inspire 
-            others but also contribute to a collective wave of goodwill that fosters a sense of unity and compassion.</div>
+<div class="centered-block">
+  <div class="inner-block">
+    <div
+      style="
+        color: white;
+        font-family: poppins;
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 10px;
+      "
+    >
+      How it works
     </div>
+    <div class="description">
+      Perform a noble deed, share it on Noble Nudge, and let the community join
+      in celebrating your kindness. Users can upvote Nobes that resonate with
+      them, creating a culture of appreciation and encouragement. Your Nobes not
+      only inspire others but also contribute to a collective wave of goodwill
+      that fosters a sense of unity and compassion.
+    </div>
+  </div>
 </div>
-  <br />
-  <br />
-<div style="padding-top: 100px;" class="heading">Categories</div>
+<br />
+<br />
+<div style="padding-top: 100px" class="heading">Categories</div>
 <br />
 <div style="padding: 20px">
   <app-categories></app-categories>
 </div>
-
 
 <!-- <div class="home-container" style="padding-bottom: 300px; padding-top: 0;">
     

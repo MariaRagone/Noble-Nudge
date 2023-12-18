@@ -15,6 +15,7 @@ import { NobeListComponent } from './Components/nobe-list/nobe-list.component';
 import { CategoriesComponent } from './Components/categories/categories.component';
 import { NobeComponent } from './Components/nobe/nobe.component';
 import { NobesPageComponent } from './Components/nobes-page/nobes-page.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NobesPageComponent } from './Components/nobes-page/nobes-page.component
     CategoriesComponent,
     NobeComponent,
     NobeListComponent,
-    NobesPageComponent
+    NobesPageComponent,
+    FooterComponent
     ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
