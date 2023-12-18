@@ -73,6 +73,15 @@
             font-size: 1.2em;
             margin-top: 0;
         }
+        button {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
+    color: blue;
+    padding: 10px 20px; /* Adjust padding as needed */
+}
+
     </style>
 </head>
 <body>
@@ -81,8 +90,12 @@
         <div>
             <h1>Welcome to Noble Nudge</h1>
             <p>The ultimate online platform dedicated to celebrating and spreading acts of kindness!</p>
+            <div class="button">
+                <button style="float: left;" [routerLink]="['/add-nobe']">Add a Nobe</button>
+            </div>
+            
         </div>
-        <img src="assets/holding-hands.png" alt="Hero Image"> <!-- Replace 'your-image.jpg' with your image file -->
+        <img src="assets/holding-hands.png" alt="Hero Image of holding hands"> 
     </div>
 
 </body>
